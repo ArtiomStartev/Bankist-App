@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <link href="../../img/icon.png" rel="shortcut icon" type="image/png"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet"/>
+    <link href="main.css" rel="stylesheet"/>
+    <title>Bankist</title>
+    <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <!-- LOGIN -->
+    <div class="container--login">
+      <section class="section section--login">
+        <img class="login__logo" src="../../img/logo-dark.png"/>
+        <h1 class="login__header">Bankist</h1>
+        <form class="d-flex">
+          <input class="login__input login__input--username" placeholder="Username" required type="text"/>
+          <input class="login__input login__input--password" maxlength="4" placeholder="Password" required type="password"/>
+          <button class="login__btn">Login</button>
+        </form>
+
+        <a class="back-to-main" href="/">Back to main</a>
+      </section>
+    </div>
+
+    <!-- TOP NAVIGATION -->
+    <nav>
+      <div class="container--nav">
+        <p class="welcome">Log in to get started</p>
+
+        <button class="logout__btn">Log out</button>
+      </div>
+    </nav>
+
+    <main class="app">
+      <!-- BALANCE -->
+      <div class="balance">
+        <div>
+          <p class="balance__label">Current balance</p>
+          <p class="balance__date">
+            As of <span class="date"></span>
+          </p>
+        </div>
+        <p class="balance__value"></p>
+      </div>
+
+      <!-- MOVEMENTS -->
+      <div class="movements"></div>
+
+      <!-- SUMMARY -->
+      <div class="summary">
+        <p class="summary__label">In</p>
+        <p class="summary__value summary__value--in"></p>
+        <p class="summary__label">Out</p>
+        <p class="summary__value summary__value--out"></p>
+        <p class="summary__label">Interest</p>
+        <p class="summary__value summary__value--interest"></p>
+        <button class="btn--sort">&downarrow; SORT</button>
+      </div>
+
+      <!-- OPERATION: TRANSFERS -->
+      <div class="operation operation--transfer">
+        <h2>Transfer money</h2>
+        <form class="form form--transfer">
+          <input class="form__input form__input--to" type="text"/>
+          <input class="form__input form__input--amount" type="number"/>
+          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <label class="form__label">Transfer to</label>
+          <label class="form__label">Amount</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: LOAN -->
+      <div class="operation operation--loan">
+        <h2>Request loan</h2>
+        <form class="form form--loan">
+          <input class="form__input form__input--loan-amount" type="number"/>
+          <button class="form__btn form__btn--loan">&rarr;</button>
+          <label class="form__label form__label--loan">Amount</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: CLOSE -->
+      <div class="operation operation--close">
+        <h2>Close account</h2>
+        <form class="form form--close">
+          <input class="form__input form__input--user" type="text"/>
+          <input class="form__input form__input--pin" maxlength="4" type="password"/>
+          <button class="form__btn form__btn--close">&rarr;</button>
+          <label class="form__label">Confirm user</label>
+          <label class="form__label">Confirm PIN</label>
+        </form>
+      </div>
+
+      <!-- LOGOUT TIMER -->
+      <p class="logout-timer">
+        You will be logged out in <span class="timer"></span>
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
